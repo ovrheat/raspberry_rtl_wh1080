@@ -43,17 +43,18 @@ By testing I've found that:
 
 But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being rtl_433 an agnostic project, it does not contains specific code for the Raspberry and/or sensors.
 
-So I've tried to integrate an rtl_433's snapshot with some code about BMP085 found on the web to build this all-in-one solution for the WH1080. 
+So that's my try to integrate some borrowed from the web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080. 
 
-Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me, tested with a RaspberryPi Model B (also model B+ works fine), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
-I have stripped all of the devices modules from rtl_433 source, leaving active only the 'Fine Offset WH1080 weather station' one to keep the resources use at minimum, but I think that to re-add modules should be not so difficult if you need support for some other device.
+Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi Model B, also with a B+ model, Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
+
+I have stripped all of the devices modules from rtl_433 source, leaving active only the **'Fine Offset WH1080 weather station'** one to keep the resources use at minimum, but I think that to re-add modules to support some other device should be not so difficult.
 
 
 So this software can:
 ----------------
 
 - Get your WH1080 weather data: wind dir and speed, temp, hum, rain, and pressure (from the wired BMP085/BMP180 sensor);
-- Get the exact time (DCF77 time system and maybe more) from the station. By using some script you can easily set the Rasp clock without the need of NTP or RTC. No data connection required!
+- Get the exact time (DCF77 time system and maybe more) from the station. By using some script you can easily set the Rasp internal clock without the need of NTP or RTC. No data connection required!
 - Give you a valid json data output for your Python (or other programming languages) needs;
 - Give you the flexibility of rtl_433 thanks to its options: you can optimize data receiving, frequency etc. ...
 
