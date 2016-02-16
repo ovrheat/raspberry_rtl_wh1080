@@ -64,7 +64,7 @@ So this software can:
 Installation instructions (tested on Raspbian Jessie (2015-11-21)):
 --------------------------
 
-After you have plugged the USB dongle into the Rasp and wired the pressure sensor to the GPIO port (search Google for how to do that. There are just 4 wires to connect. But *BE AWARE* to use the 3.3V pin, *NOT* the 5V pin), you are ready to install raspberry_rtl_wh1080. 
+After you have plugged the USB dongle into the Rasp and wired the pressure sensor to the GPIO port (search Google for how to do that. There are just 4 wires to connect. But *BE AWARE* to use the 3.3V pin, *NOT* the 5V pin), you are ready to install **raspberry_rtl_wh1080**. 
 As this work is derived from rtl_433, the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
 
 First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* and go to the 'Advanced Options' and enable both. Answer 'Yes' to the question about kernel module to be loaded by default, but do not reboot at the moment.
