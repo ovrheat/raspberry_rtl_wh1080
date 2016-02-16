@@ -18,7 +18,7 @@ Unfortunately the USB connection is not much reliable in the longtime and it ten
 
 A solution would be to grab the radio signals sent by the outdoor sensors with some kind of receiver, opportunely decoding and saving them. But there is a disadvantage: because the barometric sensor is enclosed into the indoor console unit and not in the outdoor sensors group, pressure data is NOT available into these radio signals. So we should connect a barometric sensor to this receiver to integrate the missing pressure data.
 
-The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has GPIO ports to connect sensors, its low power is more than enough for this task and it will not weigh down your electric bill even with 24/7 service (it's much less than 5 Watts). The pressure sensor (barometer) it's a cheap BMP085 or BMP180 and its wiring requires only four wires.
+The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has GPIO ports to connect sensors, its low power is more than enough for this task and it will not weigh down your electric bill even with 24/7 service (it's much less than 5 watts). The pressure sensor (barometer) it's a cheap BMP085 or BMP180 and its wiring requires only four wires.
 
 To receive WH1080's data with a RaspberryPi I have first tested using an RFM01 module: it's a tiny radio data receiver that works fine in normal conditions. Some line of code found on the web, some more wiring, and the ensemble 'Rasp + RFM01 + BMP085' has worked for a season... Or so. 
 
@@ -64,7 +64,8 @@ So this software can:
 Installation instructions (tested on Raspbian Jessie (2015-11-21)):
 --------------------------
 
-After you have plugged the USB dongle into the Rasp and wired the pressure sensor to the GPIO port (search Google for how to do that. There are just 4 wires to connect. But *BE AWARE* to use the 3.3V pin, *NOT* the 5V pin), you are ready to install **raspberry_rtl_wh1080**. 
+Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BE AWARE** to use the 3.3V pin, **NOT** the 5V pin).
+ 
 As this work is derived from rtl_433, the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
 
 First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* and go to the 'Advanced Options' and enable both. Answer 'Yes' to the question about kernel module to be loaded by default, but do not reboot at the moment.
