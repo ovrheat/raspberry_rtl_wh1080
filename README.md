@@ -32,7 +32,7 @@ Hacking the C code has been necessary so the program was passing its values 'on-
 
 There was a need for another way to receive data by using a different approach: [rtl-sdr] (http://sdr.osmocom.org/trac/wiki/rtl-sdr).
 
-There is much documentation on the web about it, and the rtl_433 project, which relies on rtl-sdr libraries, is a *perfect* solution for this task. 
+There is much documentation on the web about it, and the **rtl_433** project, which relies on rtl-sdr libraries, is a **perfect** solution for this task. 
 
 By testing I've found that:
 
