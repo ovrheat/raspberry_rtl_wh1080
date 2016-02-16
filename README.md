@@ -50,7 +50,7 @@ So this software can:
 - Give you the flexibility of rtl_433 thanks to its options: you can optimize data receiving, frequency etc. ...
 
 
-I have stripped all of the devices modules from rtl_433 source, leaving active only the 'Fine Offset WH1080 weather station' one to keep the resources use at minimum, but I think that re-add modules should be not so difficult if you need support for some other device.
+I have stripped all of the devices modules from rtl_433 source, leaving active only the 'Fine Offset WH1080 weather station' one to keep the resources use at minimum, but I think that to re-add modules should be not so difficult if you need support for some other device.
 
 
 Installation instructions (tested on Raspbian Jessie (2015-11-21)):
