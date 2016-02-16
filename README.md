@@ -7,6 +7,9 @@ RaspberryPi's [rtl_433] (https://github.com/merbanan/rtl_433) specific port to d
 - [Fine Offset WH1080] (http://www.foshk.com/weather_professional/wh1080.htm) is a relatively low-cost weather station composed by an indoor touchscreen control panel and an outdoor wireless sensors group. The latter sends periodically data packets to the indoor console, containing weather measurements about wind speed, wind direction, temperature, humidity and rain. It periodically sends also time signals (DCF77 and maybe other time signals standards) to keep the console perfectly synced with an atomic clock.
 The indoor console itself contains a barometric sensor and another hygro and temperature sensor. All of these data are available thru the console's USB port: by connecting a PC and by using some opportune software it's possible to keep track of the weather conditions on your area.
 
+
+
+
 Unfortunately the USB connection is not much reliable in the longtime and it tends to stall every often, giving the need for a console's reset. Furthermore, having a pc connected to the console with a (short) USB cable makes impossible to keep the console handy, so you have to choose if you want to see around the console or if you want to record its data.
 
 A solution would be to grab the radio signals sent by the outdoor sensors with some kind of receiver, opportunely decoding and saving them. But there is a disadvantage: because the barometric sensor is enclosed into the indoor console unit and not in the outdoor sensors group, pressure data is NOT available into these radio signals. So we should connect a barometric sensor to this receiver to integrate the missing pressure data.
