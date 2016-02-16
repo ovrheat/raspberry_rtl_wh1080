@@ -51,7 +51,7 @@ So this software can:
 ----------------
 
 - Get your WH1080 weather data: wind dir and speed, temp, hum, rain, and pressure (from the BMP085/BMP180 onboard);
-- Get the exact time (DCF77 time system and maybe more) from the station. You can set the Rasp clock without NTP or RTC!
+- Get the exact time (DCF77 time system and maybe more) from the station. By using some script you can easily set the Rasp clock without the need of NTP or RTC. No data connection required!
 - Give you a valid json data output for your Python (or other programming languages) needs;
 - Give you the flexibility of rtl_433 thanks to its options: you can optimize data receiving, frequency etc. ...
 
