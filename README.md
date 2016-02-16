@@ -48,7 +48,7 @@ So this software can:
 - Get the exact time (DCF77 time system and maybe more) from the station. You can set the Rasp clock without NTP or RTC!
 - Give you a valid json data output for your Python (or other programming languages) needs;
 - Give you the flexibility of rtl_433 thanks to its options: you can optimize data receiving, frequency etc. ...
-----------------
+
 
 I have stripped all of the devices modules from rtl_433 source, leaving active only the 'Fine Offset WH1080 weather station' one to keep the resources use at minimum, but I think that re-add modules should be not so difficult if you need support for some other device.
 
