@@ -31,7 +31,8 @@ This means that in a year that file is overwritten more than 500,000 times! It's
 Hacking the C code has been necessary so the program was passing its values 'on-the-fly' to a Python script instead of writing data to a file. But this approach, summed up to the frequency problems, somehow introduced new instability behaviours...
 
 There was a need for another way to receive data by using a different approach: [rtl-sdr] (http://sdr.osmocom.org/trac/wiki/rtl-sdr).
-There is much documentation on the web about it, and the rtl_433 project, which relies on rtl-sdr libraries is a *perfect* solution for this task. 
+
+There is much documentation on the web about it, and the rtl_433 project, which relies on rtl-sdr libraries, is a *perfect* solution for this task. 
 
 By testing I've found that:
 
