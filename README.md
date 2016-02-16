@@ -87,7 +87,7 @@ sudo make install
 sudo reboot
 
 
-
+--
 Now that we have the rtl-sdr base installed we can proceed with raspberry_rtl_wh1080:
 
 cd /home/pi
