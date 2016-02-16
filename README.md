@@ -128,11 +128,17 @@ After that, save the file and go back to the root of the source directory:
 
 --
 cd /home/pi/raspberry_rtl_wh1080
+
 mkdir build
+
 cd build
+
 cmake ../
+
 make
+
 sudo make install
+--
 
 
 You are done. Now we need to know what frequencies your WH1080 is using. This station TX comes in (at least) three different frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
