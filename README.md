@@ -4,6 +4,7 @@
 
 - The [Raspberry Pi] (https://www.raspberrypi.org/) is a tiny and affordable computer with a nice [GPIO] (https://en.wikipedia.org/wiki/General-purpose_input/output) interface.
 - [rtl_433] (https://github.com/merbanan/rtl_433) is a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
+- The [BMP085] (https://www.google.com/search?q=BMP085) is a cheap barometric sensor. It's common but obsolete, and is replaced by the also cheap and pin-to-pin compatible [BMP180] (https://www.google.com/search?q=BMP180).
 - The [Fine Offset WH1080] (http://www.foshk.com/weather_professional/wh1080.htm) is a relatively low-cost weather station and is also sold rebranded with many names: Watson W-8681, Digitech XC0348 Weather Station, PCE-FWS 20, Elecsa AstroTouch 6975, Froggit WH1080 and many others.
  
 --
