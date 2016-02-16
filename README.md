@@ -46,6 +46,7 @@ But we still have the same problem about lack of pressure data so we still need 
 So I've tried to integrate an rtl_433's snapshot with some code about BMP085 found on the web to build this all-in-one solution for the WH1080. 
 
 Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me, tested with a RaspberryPi Model B (also model B+ works fine), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
+I have stripped all of the devices modules from rtl_433 source, leaving active only the 'Fine Offset WH1080 weather station' one to keep the resources use at minimum, but I think that to re-add modules should be not so difficult if you need support for some other device.
 
 
 So this software can:
@@ -57,7 +58,7 @@ So this software can:
 - Give you the flexibility of rtl_433 thanks to its options: you can optimize data receiving, frequency etc. ...
 
 
-I have stripped all of the devices modules from rtl_433 source, leaving active only the 'Fine Offset WH1080 weather station' one to keep the resources use at minimum, but I think that to re-add modules should be not so difficult if you need support for some other device.
+--
 
 
 Installation instructions (tested on Raspbian Jessie (2015-11-21)):
