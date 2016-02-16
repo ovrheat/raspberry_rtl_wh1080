@@ -151,24 +151,26 @@ sudo make install
 You are done. Now we need to know what frequencies your WH1080 is using. This station TX comes in (at least) three different frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
 My station sends data on 868.3 Mhz, so my command line is:
 
-rtl_433 -f 868300000 -l 0
+*rtl_433 -f 868300000 -l 0*
 
 
 If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave the '-l 0' parameter:
 
-rtl_433 -l 0
+*rtl_433 -l 0*
 
 
 If you want json data output, use -F json parameter:
 
-rtl_433 -f 868300000 -F json -l 0
+*rtl_433 -f 868300000 -F json -l 0*
 
+
+The WH1080 sends time packets on the start of (mostly) even hours: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
 
 To recognize message type (weather or time) you can look at the 'msg_type' field on json output:
 
-msg_type 0 = weather data
+*msg_type 0 = weather data*
 
-msg_type 1 = time data
+*msg_type 1 = time data*
 
 --
 For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just don't bother them with questions related to Raspberry and pressure sensors... :)
