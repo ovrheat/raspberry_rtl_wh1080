@@ -63,6 +63,8 @@ First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* an
 
 Then:
 
+--
+
 sudo apt-get update
 
 sudo apt-get install libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
@@ -90,23 +92,33 @@ sudo reboot
 --
 Now that we have the rtl-sdr base installed we can proceed with raspberry_rtl_wh1080:
 
+
+--
 cd /home/pi
+
 git clone https://github.com/ovrheat/raspberry_rtl_wh1080.git
+
 cd raspberry_rtl_wh1080
 
+
 *Now an important part: you MUST edit the file:*
+--------
 
 ~/raspberry_wh_1080/src/devices/fineoffset_wh1080.c
 
-find the line containing: 
+find the line containing:
+
 
 'const unsigned char station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!'
 
+
 '10' is my station altitude in meters. You must change this to YOUR station altitude (in meters), otherwise your pressure reading will be incorrect.
+
 
 Another thing to look for is this line:
 
 char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, try changing '1' to '0'
+
 
 It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . 
 
@@ -114,6 +126,7 @@ It's self-explaining, I hope. If something doesn't work with pressure and you ar
 
 After that, save the file and go back to the root of the source directory:
 
+--
 cd /home/pi/raspberry_rtl_wh1080
 mkdir build
 cd build
