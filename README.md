@@ -69,14 +69,23 @@ sudo apt-get install libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
 
 
 cd /home/pi
+
 git clone git://git.osmocom.org/rtl-sdr.git
+
 cd rtl-sdr
+
 mkdir build
+
 cd build
+
 cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON
+
 make
+
 sudo make install
+
 sudo reboot
+
 
 
 Now that we have the rtl-sdr base installed we can proceed with raspberry_rtl_wh1080:
