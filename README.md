@@ -22,8 +22,10 @@ The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has
 
 To receive WH1080's data with a RaspberryPi I have first tested using an RFM01 module: it's a radio data receiver that works fine in normal conditions. Some line of code found on the web, some more wiring, and the ensemble 'Rasp + RFM01 + BMP085' has worked for a season... Or so. 
 
-Unfortunately, whith season changes I've found that WH1080 tends to drift in frequency, probably because of the lack of frequency/temperature compensation on the external sensors group's TX: the more the temperature was lowering in winter, the more the signal was drifting and my 'ensemble' was unable to cope with it. So during the most interesting part of winter I was unable to track down data! 
+Unfortunately, whith season changes I've found that WH1080 tends to drift in frequency, probably because of the lack of frequency/temperature compensation on the external sensors group's TX: the more the temperature was lowering in winter, the more the signal was drifting and my 'ensemble' was unable to cope with it. So during the most interesting part of winter I was unable to track down data!
+
 Trying to recalibrate frequency on RFM01 was an option, but as soon as summer approaching, the same problem obviously rised again with the same result: no data, need to recalibrate again...
+
 Furthermore the C code solution used to read data from the RFM01 module was built to write the received data on a file, and that was happening every 48 seconds (the WH1080 sends its data every 48 seconds). The file is then ready to be read by your Python (or so) script to get the data contained within. 
 This means that in a year that file will be overwritten over 500,000 times! It's just too much for the poor SDcard which is the 'hard disk' of the Rasp (as you know there is a finite number of times for write-cycles in such a media). 
 Hacking the C code has been necessary so the program was passing its values 'on-the-fly' to a Python script instead of writing data to a file. But this approach, summed up to the frequency problems, somehow introduced new instability behaviours...
