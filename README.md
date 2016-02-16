@@ -5,9 +5,9 @@ RaspberryPi's [rtl_433] (https://github.com/merbanan/rtl_433) specific port to d
 - The [Raspberry Pi] (https://www.raspberrypi.org/) is a tiny and affordable computer with a nice [GPIO] (https://en.wikipedia.org/wiki/General-purpose_input/output) interface.
 - [rtl_433] (https://github.com/merbanan/rtl_433) is a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
 - The [Fine Offset WH1080] (http://www.foshk.com/weather_professional/wh1080.htm) is a relatively low-cost weather station and is also sold rebranded with many names: Watson W-8681, Digitech XC0348 Weather Station, PCE-FWS 20, Elecsa AstroTouch 6975, Froggit WH1080 and many others.
-- 
-
-The WH1080 it's composed by an indoor touchscreen control panel and an outdoor wireless sensors group. The latter sends periodically data packets to the indoor console, containing weather measurements about wind speed, wind direction, temperature, humidity and rain. It periodically sends also time signals (DCF77 and maybe other time signals standards) to keep the console clock perfectly synced with an atomic clock.
+ 
+--
+The WH1080 weather station it's composed by an indoor touchscreen control panel and an outdoor wireless sensors group. The latter sends periodically data packets to the indoor console, containing weather measurements about wind speed, wind direction, temperature, humidity and rain. It periodically sends also time signals (DCF77 and maybe other time signals standards) to keep the console clock perfectly synced with an atomic clock.
 The indoor console itself contains a barometric sensor and another hygro and temperature sensor. All of these data are available thru the console's USB port: by connecting a PC and by using some opportune software it's possible to keep track of the weather conditions on your area.
 
 
