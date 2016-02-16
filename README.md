@@ -164,7 +164,7 @@ If you want json data output, use -F json parameter:
 *rtl_433 -f 868300000 -F json -l 0*
 
 --
-The WH1080 sends time packets on the start of (mostly) even hours: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
+The WH1080 sends time packets on the start of (mostly) every even hours: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
 
 
 To recognize message type (weather or time) and adapt your data acquisition, you can look at the 'msg_type' field on json output:
