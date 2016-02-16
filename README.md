@@ -64,6 +64,7 @@ First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* an
 Then:
 
 sudo apt-get update
+
 sudo apt-get install libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
 
 
