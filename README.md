@@ -159,10 +159,12 @@ rtl_433 -f 868300000 -F json -l 0
 
 
 To recognize message type (weather or time) you can look at the 'msg_type' field on json output:
+
 msg_type 0 = weather data
+
 msg_type 1 = time data
 
-
+--
 For specific usage of rtl_433 (and relative options) you could look at the [project page] (https://github.com/merbanan/rtl_433)
 
 
