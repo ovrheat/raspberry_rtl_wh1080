@@ -154,7 +154,7 @@ My station sends data on 868.3 Mhz, so my command line is:
 rtl_433 -f 868300000 -l 0
 
 
-for the 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave the '-l 0' parameter:
+If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave the '-l 0' parameter:
 
 rtl_433 -l 0
 
@@ -171,7 +171,7 @@ msg_type 0 = weather data
 msg_type 1 = time data
 
 --
-For specific usage of rtl_433 (and relative options) you could look at the [project page] (https://github.com/merbanan/rtl_433)
+For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just don't bother them with questions related to Raspberry and pressure sensors... :)
 
 
 ------------------------------------------------------------------
