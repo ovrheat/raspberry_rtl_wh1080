@@ -43,9 +43,9 @@ By testing I've found that:
 - the reading process takes much less CPU power than RFM01 (my rtl_433 process is around 15% on an 'old' Rasp model B);
 - It's plug & play! Just insert the dongle in the Rasp USB port!
 
-But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being rtl_433 an agnostic project, it does not contains specific code for the Raspberry and/or sensors.
+But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being rtl_433 an agnostic project, it does not contains itself specific code for the Raspberry and its sensors.
 
-So that's my try to integrate some borrowed from the web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080. 
+So that's my try to integrate some borrowed-from-the-web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080. 
 
 Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi Model B, also with a B+ model, Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
 
