@@ -108,9 +108,9 @@ cd raspberry_rtl_wh1080
 
 find the line containing:
 
-
+--
 'const unsigned char station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!'
-
+--
 
 '10' is my station altitude in meters. You must change this to YOUR station altitude (in meters), otherwise your pressure reading will be incorrect.
 
