@@ -163,10 +163,11 @@ sudo make install
 --
 You are done and ready to test. 
 
-Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some time. Keep this in mind this especially at the start of the even hours, because of the switch to time signals, as explained later.
+Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some tenth of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
 
-To test now we need to know what frequencies your WH1080 is using. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
-My station sends data on 868.3 Mhz, so my command line should be:
+
+To test now we need to know on what frequencies your WH1080 is transmitting. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
+My station sends its data on 868.3 Mhz, so my command line should be:
 
 *rtl_433 -f 868300000 -l 0*
 
