@@ -167,9 +167,18 @@ If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defa
 *rtl_433 -l 0*
 
 
-If you want json data output, use -F json parameter:
+If you want json formatted data output, use -F json parameter:
 
 *rtl_433 -f 868300000 -F json -l 0*
+
+
+Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move a little from the frequency center. For example my station is 868.3 Mhz, but I'll better tune to 868.25 Mhz:
+
+rtl_433 -f 868250000 -l 0
+
+
+'-l 0' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection.
+
 
 --
 The WH1080 sends time packets on the start of (mostly) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
