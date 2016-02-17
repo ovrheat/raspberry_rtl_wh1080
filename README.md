@@ -199,7 +199,7 @@ If you want json formatted data output, use -F json parameter:
 
 
 --
-The WH1080 sends time packets on the start of (mostly) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
+The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
 
 
 To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json output:
