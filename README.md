@@ -162,12 +162,16 @@ My station sends data on 868.3 Mhz, so my command line should be:
 *rtl_433 -f 868300000 -l 0*
 
 
-Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move a little from the frequency center. So for my station which is 868.3 Mhz, I'll better tune to 868.25 Mhz:
+Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move a little from the frequency center. So for my station which is 868.3 Mhz, I'll better tune (for example) to 868.25 Mhz:
 
 *rtl_433 -f 868250000 -l 0*
 
+or to 868.35 Mhz:
 
-If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave the '-l 0' parameter:
+*rtl_433 -f 868350000 -l 0*
+
+
+If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave alone the '-l 0' parameter:
 
 *rtl_433 -l 0*
 
@@ -187,7 +191,7 @@ If you want json formatted data output, use -F json parameter:
 The WH1080 sends time packets on the start of (mostly) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it restarts to send weather data as usual.
 
 
-To recognize message type (weather or time) and adapt your data acquisition, you can look at the 'msg_type' field on json output:
+To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json output:
 
 *msg_type 0 = weather data*
 
