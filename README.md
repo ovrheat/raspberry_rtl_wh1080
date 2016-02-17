@@ -68,7 +68,7 @@ So this software can:
 Installation instructions (tested on Raspbian Jessie (2015-11-21)):
 --------------------------
 
-Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BE AWARE** to use the 3.3V pin, **NOT** the 5V pin).
+Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BEWARE** to use the 3.3V pin, **NOT** the 5V pin).
  
 As this work is derived from rtl_433, the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
 
