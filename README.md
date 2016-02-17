@@ -174,10 +174,10 @@ If you want json formatted data output, use -F json parameter:
 
 Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move a little from the frequency center. For example my station is 868.3 Mhz, but I'll better tune to 868.25 Mhz:
 
-rtl_433 -f 868250000 -l 0
+*rtl_433 -f 868250000 -l 0*
 
 
-'-l 0' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection.
+'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection.
 
 
 --
