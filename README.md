@@ -56,7 +56,7 @@ So that's my try to integrate some borrowed-from-the-web code to read BMP085 dat
 
 Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi model B (also tested with a B+ model), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
 
-I have stripped all of the devices modules from rtl_433 source, leaving active only the **'Fine Offset WH1080 weather station'** one to keep the resources use at minimum, but I think that to re-add modules to support some other device should be not so difficult.
+I have stripped all of the devices modules from rtl_433 source, leaving only active the **'Fine Offset WH1080 weather station'** one to keep the resources use at minimum, but I think that to re-add modules to support some other device should be not so difficult.
 
 
 So this software can:
