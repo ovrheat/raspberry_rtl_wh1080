@@ -40,7 +40,7 @@ By testing I've found that:
 
 - the rtl-sdr dongle is far more sensible than the RFM01;
 - it's more able to cope with frequency drifting. No more data loss, no more datalogger crashes;
-- being a MUCH more stable solution, there's no need to pass data to a datalogger script by using such a 'data file transfer' method. You can grab json data 'on the fly' from the program's output. As a result, the Rasp SDcard is much less stressed and its theoretical life is way longer.  
+- being a MUCH more stable solution, there's no need to pass data to a datalogger script by using such a 'data file transfer' method. You can grab json data 'on the fly' from the program's output. As a result, the Rasp SDcard is much less stressed and its theoretical life is much longer.  
 - the reading process takes much less CPU power than RFM01 (my rtl_433 process is around 15% on an 'old' Rasp model B);
 - It's plug & play! Just insert the dongle in the Rasp USB port!
 
