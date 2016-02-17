@@ -48,7 +48,7 @@ But we still have the same problem about lack of pressure data so we still need 
 
 So that's my try to integrate some borrowed-from-the-web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080. 
 
-Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi Model B, also with a B+ model, Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
+Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi model B (also tested with a B+ model), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It should compile and work happily to the Raspberry Pi 2 too.
 
 I have stripped all of the devices modules from rtl_433 source, leaving active only the **'Fine Offset WH1080 weather station'** one to keep the resources use at minimum, but I think that to re-add modules to support some other device should be not so difficult.
 
@@ -68,7 +68,7 @@ So this software can:
 Installation instructions (tested on Raspbian Jessie (2015-11-21)):
 --------------------------
 
-Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BEWARE** to use the 3.3V pin, **NOT** the 5V pin).
+Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BEWARE** to power the barometric module by using the 3.3V pin, **NOT** the 5V pin).
  
 As this work is derived from rtl_433, the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
 
