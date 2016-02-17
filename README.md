@@ -63,7 +63,7 @@ So this software can:
 ----------------
 
 - Get your WH1080 outdoor weather data: wind direction and speed, temperature, humidity, rain, and pressure (from the wired BMP085/BMP180 sensor);
-- Get the exact time and date (DCF77 time system and maybe more) coming from the station. By using some scripting you can easily set the Rasp internal clock to the **exact** time and date without the need of [NTP] (https://en.wikipedia.org/wiki/Network_Time_Protocol) or [RTC] ((https://www.google.com/search?q=raspberry+rtc)). No data connection required!
+- Get the exact time and date (DCF77 time system and maybe more) coming from the station. By using some scripting you can easily set the Rasp internal clock to the **exact** time and date without the need of [NTP] (https://en.wikipedia.org/wiki/Network_Time_Protocol) or [RTC] (https://www.google.com/search?q=raspberry+rtc). No data connection required!
 - Give you a valid json data output for your Python's (or other programming languages) needs;
 - Give you the flexibility of rtl_433 thanks to its options: you can optimize data mode, signal, frequency etc. ...
 
