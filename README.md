@@ -157,9 +157,14 @@ sudo make install
 
 --
 You are done. Now we need to know what frequencies your WH1080 is using. This station TX comes in (at least) three different frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
-My station sends data on 868.3 Mhz, so my command line is:
+My station sends data on 868.3 Mhz, so my command line should be:
 
 *rtl_433 -f 868300000 -l 0*
+
+
+Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move a little from the frequency center. So for my station which is 868.3 Mhz, I'll better tune to 868.25 Mhz:
+
+*rtl_433 -f 868250000 -l 0*
 
 
 If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave the '-l 0' parameter:
@@ -167,17 +172,15 @@ If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defa
 *rtl_433 -l 0*
 
 
+'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection.
+
+
+
 If you want json formatted data output, use -F json parameter:
 
 *rtl_433 -f 868300000 -F json -l 0*
 
 
-Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move a little from the frequency center. For example my station is 868.3 Mhz, but I'll better tune to 868.25 Mhz:
-
-*rtl_433 -f 868250000 -l 0*
-
-
-'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection.
 
 
 --
