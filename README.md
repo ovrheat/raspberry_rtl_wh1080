@@ -4,7 +4,7 @@
 ------------------------------
 
 - The [Raspberry Pi] (https://www.raspberrypi.org/) is a tiny and affordable computer with a nice [GPIO] (https://en.wikipedia.org/wiki/General-purpose_input/output) interface.
-- [rtl_433] (https://github.com/merbanan/rtl_433) is a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
+- The solution is based on [rtl_433] (https://github.com/merbanan/rtl_433), a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
 - The [BMP085] (https://www.google.com/search?q=BMP085) is a cheap barometric sensor. It's common but obsolete, and is replaced by the also cheap and pin-to-pin compatible [BMP180] (https://www.google.com/search?q=BMP180).
 - The [Fine Offset WH1080] (http://www.foshk.com/weather_professional/wh1080.htm) is a relatively low-cost weather station and is also sold rebranded with many names: Watson W-8681, Digitech XC0348 Weather Station, PCE-FWS 20, Elecsa AstroTouch 6975, Froggit WH1080 and many others.
  
@@ -35,7 +35,7 @@ Hacking the C code has been necessary so the program was passing its values 'on-
 
 There was a need for another way to receive data by using a different approach: [rtl-sdr] (http://sdr.osmocom.org/trac/wiki/rtl-sdr).
 
-There is much documentation on the web about it, and the **rtl_433** project, which relies on rtl-sdr libraries, is a **perfect** solution for this task. 
+There is much documentation on the web about it, and the **[rtl_433] (https://github.com/merbanan/rtl_433)** project, which relies on rtl-sdr libraries, is a **perfect** solution for this task. 
 
 By testing I've found that:
 
@@ -45,7 +45,7 @@ By testing I've found that:
 - the reading process takes much less CPU power than using RFM01 (my rtl_433 process is around 15% on an 'old' Rasp model B);
 - It's plug & play! Just insert the dongle in the Rasp USB port!
 
-But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being rtl_433 an agnostic project, it does not contains itself specific code for the Raspberry and its sensors.
+But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being [rtl_433] (https://github.com/merbanan/rtl_433) an agnostic project, it does not contains itself specific code for the Raspberry and its sensors.
 
 So that's my try to integrate some borrowed-from-the-web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080. 
 
@@ -71,7 +71,7 @@ Installation instructions (tested on Raspbian Jessie (2015-11-21)):
 
 Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BEWARE** to power the barometric module by using the 3.3V pin, **NOT** the 5V pin).
  
-As this work is derived from rtl_433, the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
+As this work is derived from [rtl_433] (https://github.com/merbanan/rtl_433), the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
 
 First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* and go to the 'Advanced Options' and enable both. Answer 'Yes' to the question about kernel module to be loaded by default, but do not reboot at the moment.
 
@@ -188,7 +188,7 @@ For specific usage of rtl_433 (and other relative options) you can look at the [
 ------------------------------------------------------------------
 
 Notes:
-- this is just a 'hacked' version of rtl_433; credits and kudos should go to this fantastic tool's authors.
+- this is essentially a 'hacked' version of [rtl_433] (https://github.com/merbanan/rtl_433); credits and kudos should go to this fantastic tool's authors.
 - BMP085 code comes from https://www.john.geek.nz/2013/02/update-bosch-bmp085-source-raspberry-pi/ . Kudos!
 
 
