@@ -119,13 +119,13 @@ cd raspberry_rtl_wh1080
 
 ~/raspberry_wh_1080/src/devices/fineoffset_wh1080.c
 
-find the line containing:
+find the line (should be #108) containing:
 
 --
 const unsigned char station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!
 --
 
-'10' is my station altitude in meters. You must change this to YOUR station altitude (in meters), otherwise your pressure reading will be incorrect.
+'10' is my station altitude in meters. You must change this to YOUR station altitude (in meters), otherwise your pressure reading could be incorrect.
 
 
 Another thing to look for is this line:
