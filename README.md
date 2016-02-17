@@ -161,7 +161,7 @@ sudo make install
 
 
 --
-You are done. Now we need to know what frequencies your WH1080 is using. This station TX comes in (at least) three different frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
+You are done. Now we need to know what frequencies your WH1080 is using. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
 My station sends data on 868.3 Mhz, so my command line should be:
 
 *rtl_433 -f 868300000 -l 0*
