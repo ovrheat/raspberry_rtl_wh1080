@@ -140,7 +140,7 @@ Another thing to look for is this line:
 char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, try changing '1' to '0'
 --
 
-It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . 
+It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your correct BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . 
 
 
 --
