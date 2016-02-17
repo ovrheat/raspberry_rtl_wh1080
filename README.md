@@ -1,4 +1,4 @@
----
+
 ---
 # raspberry_rtl_wh1080
 ---
@@ -161,7 +161,9 @@ sudo make install
 
 
 --
-You are done. Now we need to know what frequencies your WH1080 is using. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
+You are done. 
+
+To test now we need to know what frequencies your WH1080 is using. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
 My station sends data on 868.3 Mhz, so my command line should be:
 
 *rtl_433 -f 868300000 -l 0*
@@ -176,7 +178,7 @@ or to 868.35 Mhz:
 *rtl_433 -f 868350000 -l 0*
 
 
-If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but leave alone the '-l 0' parameter:
+If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but keep the '-l 0' parameter:
 
 *rtl_433 -l 0*
 
