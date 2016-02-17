@@ -1,5 +1,5 @@
 # raspberry_rtl_wh1080
-[RaspberryPi] (https://www.raspberrypi.org/)' specific rtl-sdr solution to decode [Fine Offset WH1080 weather station] (http://www.foshk.com/weather_professional/wh1080.htm) RF data signal, and to read data from a [BMP085] (https://www.google.com/search?q=BMP085)/[BMP180] (https://www.google.com/search?q=BMP180) barometric sensor using an 'hacked' [rtl_433] (https://github.com/merbanan/rtl_433) snapshot.
+[RaspberryPi] (https://www.raspberrypi.org/)' all-in-one rtl-sdr solution to decode [Fine Offset WH1080 weather station] (http://www.foshk.com/weather_professional/wh1080.htm) RF data signal, and to read data from a [BMP085] (https://www.google.com/search?q=BMP085)/[BMP180] (https://www.google.com/search?q=BMP180) barometric sensor using an 'hacked' [rtl_433] (https://github.com/merbanan/rtl_433) snapshot.
 ------------------------------
 
 - The [Raspberry Pi] (https://www.raspberrypi.org/) is a tiny and affordable computer with a nice [GPIO] (https://en.wikipedia.org/wiki/General-purpose_input/output) interface.
