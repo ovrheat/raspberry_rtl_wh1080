@@ -41,7 +41,7 @@ By testing I've found that:
 - the rtl-sdr dongle is far more sensible than the RFM01;
 - it's more able to cope with frequency drifting. No more data loss, no more datalogger crashes;
 - being a MUCH more stable solution, there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method. You can grab json data 'on the fly' from the program, piping its output into your datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
-- the reading process takes much less CPU power than RFM01 (my rtl_433 process is around 15% on an 'old' Rasp model B);
+- the reading process takes much less CPU power than using RFM01 (my rtl_433 process is around 15% on an 'old' Rasp model B);
 - It's plug & play! Just insert the dongle in the Rasp USB port!
 
 But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being rtl_433 an agnostic project, it does not contains itself specific code for the Raspberry and its sensors.
