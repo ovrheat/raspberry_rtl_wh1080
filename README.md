@@ -8,7 +8,9 @@
 ------------------------------
 
 ---
-- Based on [rtl_433] (https://github.com/merbanan/rtl_433), a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
+Based on [rtl_433] (https://github.com/merbanan/rtl_433), a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
+
+
 - The [Raspberry Pi] (https://www.raspberrypi.org/) is a tiny and affordable computer with a nice [GPIO] (https://en.wikipedia.org/wiki/General-purpose_input/output) interface.
 - The [BananaPi] (https://en.wikipedia.org/wiki/Banana_Pi) is similar to RaspberryPi. This program has been tested with version M1 (Allwinner A20 - ARM Cortex-A7 dual-core, 1GHz, Mali400MP2 GPU, 1GB DDR3 DRAM).
 - The [BMP085] (https://www.google.com/search?q=BMP085) is a cheap barometric sensor. It's common but obsolete, and is replaced by the also cheap and pin-to-pin compatible [BMP180] (https://www.google.com/search?q=BMP180).
