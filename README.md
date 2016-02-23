@@ -81,12 +81,12 @@ As this work is derived from [rtl_433] (https://github.com/merbanan/rtl_433), th
 
 First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* and go to the 'Advanced Options' and enable both. Answer 'Yes' to the question about kernel module to be loaded by default, but do not reboot at the moment.
 
-If you have a BananaPi you should also install its GPIO_BP. Look here:
+If you have a **BananaPi** you should also install its GPIO_BP. Look here:
 https://github.com/LeMaker/RPi.GPIO_BP
 
 
 You should now be ready to compile. For the Raspberry we assume /home/pi as your home; you can use the folder that you want, 
-especially for the BananaPi, but obviously it should be writable by your user.
+especially for the BananaPi, but obviously it should be writable by your user (and you should adapt following commands, of course).
 
 --
 
