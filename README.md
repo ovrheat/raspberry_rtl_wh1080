@@ -128,7 +128,7 @@ cd raspberry_rtl_wh1080
 *Now an important part: you MUST edit the file:*
 --------
 
-~/raspberry_wh_1080/src/devices/fineoffset_wh1080.c
+**~/raspberry_wh_1080/src/devices/fineoffset_wh1080.c**
 
 find the line (should be #108) containing:
 
@@ -148,11 +148,11 @@ Another thing to look for is this line, especially you BananaPi users:
 
 It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your correct BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . BananaPi users MUST change this from 
 
-"/dev/i2c-1"; 
+**"/dev/i2c-1";**
 
 to 
 
-"/dev/i2c-2";
+**"/dev/i2c-2";**
 
 
 or it will not work!
