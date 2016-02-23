@@ -133,7 +133,8 @@ unsigned int temperature, pressure;
 int bmp085_i2c_Begin()
 {
 	int fd;
-	char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, try changing '1' to '0'
+	char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, 
+	// try changing '1' to '0'. Also change it to '2' if you are using a BananaPi! ("/dev/i2c-2";)
 	
 	// Open port for reading and writing
 	if ((fd = open(fileName, O_RDWR)) < 0)
