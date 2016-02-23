@@ -3,13 +3,14 @@
 # raspberry_rtl_wh1080
 ---
 ---
-[RaspberryPi] (https://www.raspberrypi.org/)'s all-in-one rtl-sdr solution to decode [Fine Offset WH1080 weather station] (http://www.foshk.com/weather_professional/wh1080.htm) RF data signal, and to read data from a [BMP085] (https://www.google.com/search?q=BMP085)/[BMP180] (https://www.google.com/search?q=BMP180) barometric sensor.
+[RaspberryPi] (https://www.raspberrypi.org/) or [BananaPi] (https://en.wikipedia.org/wiki/Banana_Pi) all-in-one rtl-sdr solution to decode [Fine Offset WH1080 weather station] (http://www.foshk.com/weather_professional/wh1080.htm) RF data signal, and to read data from a [BMP085] (https://www.google.com/search?q=BMP085)/[BMP180] (https://www.google.com/search?q=BMP180) barometric sensor.
 ------------------------------
 ------------------------------
 
 ---
 - Based on [rtl_433] (https://github.com/merbanan/rtl_433), a fantastic tool to turn your [Realtek RTL2832 based DVB dongle] (https://www.google.com/search?q=Realtek+RTL2832+based+DVB+dongle&source=lnms&tbm=isch&sa=X&ved=0) into a generic data receiver.
 - The [Raspberry Pi] (https://www.raspberrypi.org/) is a tiny and affordable computer with a nice [GPIO] (https://en.wikipedia.org/wiki/General-purpose_input/output) interface.
+- The [BananaPi] (https://en.wikipedia.org/wiki/Banana_Pi) is similar to RaspberryPi. This program has been tested with version M1 (Allwinner A20 - ARM Cortex-A7 dual-core, 1GHz, Mali400MP2 GPU, 1GB DDR3 DRAM).
 - The [BMP085] (https://www.google.com/search?q=BMP085) is a cheap barometric sensor. It's common but obsolete, and is replaced by the also cheap and pin-to-pin compatible [BMP180] (https://www.google.com/search?q=BMP180).
 - The [Fine Offset WH1080] (http://www.foshk.com/weather_professional/wh1080.htm) is a relatively low-cost weather station and is also sold rebranded with many names: Watson W-8681, Digitech XC0348 Weather Station, PCE-FWS 20, Elecsa AstroTouch 6975, Froggit WH1080 and many others.
  
@@ -80,14 +81,18 @@ As this work is derived from [rtl_433] (https://github.com/merbanan/rtl_433), th
 
 First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* and go to the 'Advanced Options' and enable both. Answer 'Yes' to the question about kernel module to be loaded by default, but do not reboot at the moment.
 
-Then:
+If you have a BananaPi you should also install its GPIO_BP. Look here:
+https://github.com/LeMaker/RPi.GPIO_BP
+
+
+You should now be ready to compile. For the Raspberry we assume /home/pi as your home; you can use the folder that you want, 
+especially for the BananaPi, but obviously it should be writable by your user.
 
 --
 
 sudo apt-get update
 
 sudo apt-get install libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
-
 
 cd /home/pi
 
@@ -134,16 +139,27 @@ const unsigned char station_altitude = 10;  // <----- Edit this value entering Y
 '10' is my station altitude in meters. You must change this to YOUR station altitude (in meters), otherwise your pressure reading could be incorrect.
 
 
-Another thing to look for is this line:
+Another thing to look for is this line, especially you BananaPi users:
 
 --
-char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, try changing '1' to '0'
+char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, 
+	// try changing '1' to '0'. Also change it to '2' if you are using a BananaPi! ("/dev/i2c-2";)
 --
 
-It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your correct BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . 
+It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your correct BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . BananaPi users MUST change this from 
+
+"/dev/i2c-1"; 
+
+to 
+
+"/dev/i2c-2";
+
+
+or it will not work!
 
 
 --
+
 After that, save the file and go back to the root of the source directory:
 
 --
