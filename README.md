@@ -238,7 +238,7 @@ To recognize message type (weather or time) and adapt your data acquisition scri
  
 Just another thing to know: the station often sends double-data packets in the same second (or so): 
 
-
+```
 
 **2016-02-24 00:26:02** :   Fine Offset WH1080 weather station
         Msg type:        0
@@ -265,7 +265,7 @@ Just another thing to know: the station often sends double-data packets in the s
         Total rainfall:  255.0
         Internal temp.:  18.1 C 
         
-
+```
 
 This is the way the station works. You could enable some mechanism on your script to ignore the second data packet if it's identical to the first, should this be an unwanted behaviour.
 
