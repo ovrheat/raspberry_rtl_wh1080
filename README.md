@@ -88,13 +88,13 @@ https://github.com/LeMaker/RPi.GPIO_BP
 
 
 You should now be ready to compile. For the Raspberry we assume /home/pi as your home; you can use the folder that you want, 
-especially for the BananaPi, but obviously it should be writable by your user (and you should adapt following commands, of course).
+especially for the BananaPi, but obviously it should be writable by your user (and you should adapt following commands, of course). BananaPi users: I don't remember exactly if some other package is needed. If you find some trouble let me know!
 
 --
 
 sudo apt-get update
 
-sudo apt-get install libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
+sudo apt-get install build-essential libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
 
 cd /home/pi
 
