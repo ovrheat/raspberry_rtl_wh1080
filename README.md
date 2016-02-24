@@ -77,13 +77,13 @@ So this software can:
 Installation instructions (tested on Raspbian Jessie (2015-11-21) for the RaspberryPi, and on Bananian Linux (3.4.104-bananian) for the BananaPi):
 --------------------------
 
-Plug the USB dongle into the Rasp and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi model. There are just 4 wires to connect. Just **BEWARE** to power the barometric module by using the 3.3V pin, **NOT** the 5V pin).
+Plug the USB dongle into the RaspPi/BananaPi and connect the pressure sensor to the GPIO port (search Google for how to do that on your RaspberryPi / BananaPi model. There are just 4 wires to connect. Just **BEWARE** to power the barometric module by using the **3.3VDC** pin, **NOT** the 5VDC pin).
  
 As this work is derived from [rtl_433] (https://github.com/merbanan/rtl_433), the same compilation and installation procedures applies, but because of the barometric sensor you need some extra operation:
 
 First of all SPI and I2C on the Rasp must be enabled. Use *sudo raspi-config* and go to the 'Advanced Options' and enable both. Answer 'Yes' to the question about kernel module to be loaded by default, but do not reboot at the moment.
 
-If you have a **BananaPi** you should also install its GPIO_BP. Look here:
+If you have a **BananaPi** you should install its GPIO_BP libraries. Look here:
 https://github.com/LeMaker/RPi.GPIO_BP
 
 
