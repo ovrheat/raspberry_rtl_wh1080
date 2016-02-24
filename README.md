@@ -179,6 +179,9 @@ sudo make install
 
 
 --
+Do not pay too much attention to the various 'Warning' that you'll see, they are not importants.
+
+
 You are now done and ready to test. Remember to connect the mini antenna to the dongle (..doh!). 
 
 Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some dozen of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
