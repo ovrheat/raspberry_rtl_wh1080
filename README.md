@@ -194,13 +194,15 @@ My station sends its data on 868.3 Mhz, so my command line should be:
 **rtl_433 -f 868300000 -l 0**
 
 
-Note that sometime you could have problems if you tune to the exact frequency of your station (that's the way rtl-sdr works). So you'll better move off a little from the frequency center. So for my station which is 868.3 Mhz, I'll better tune (for example) to 868.25 Mhz:
+Note that sometime you could have reception problems if you tune to the exact frequency of your station (that's the way rtl-sdr works), and you'll better move off a little from the frequency center. So for my station which is 868.3 Mhz, I'll better tune (for example) to 868.25 Mhz:
 
 **rtl_433 -f 868250000 -l 0**
 
 or to 868.35 Mhz:
 
 **rtl_433 -f 868350000 -l 0**
+
+Keep this in mind especially in case of WH1080's drifting frequencies: you should find the right value for your station by seeking a little, and it should be fine on all seasons :). A good start point could be to use your USB dongle with some rtl-sdr program (SDRSharp, CubicSDR...) to find your WH1080 frequency as 'seen' by your dongle, then, as said, move off just a little in raspberry_rtl_wh1080.
 
 
  
