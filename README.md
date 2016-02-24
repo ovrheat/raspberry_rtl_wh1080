@@ -123,33 +123,34 @@ Now that we have the rtl-sdr base installed we can proceed with **raspberry_rtl_
 
 
 --
+```bash
 cd /home/pi
 
 git clone https://github.com/ovrheat/raspberry_rtl_wh1080.git
 
 cd raspberry_rtl_wh1080
-
+```
 
 *Now an important part: you MUST edit the file:*
 --------
-
-**~/raspberry_wh_1080/src/devices/fineoffset_wh1080.c**
-
+```bash
+~/raspberry_wh_1080/src/devices/fineoffset_wh1080.c
+```
 find the line (should be #108) containing:
 
-
-**const unsigned char station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!**
-
+```c
+const unsigned char station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!
+```
 
 '10' is my station altitude in meters. You must change this to YOUR station altitude (in meters), otherwise your pressure reading could be incorrect.
 
 
 Another thing to look for is this line, **especially you BananaPi users**:
 
-
+```c
 **char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, 
 	// try changing '1' to '0'. Also change it to '2' if you are using a BananaPi! ("/dev/i2c-2";)**
-
+```
 
 It's self-explaining, I hope. If something doesn't work with pressure and you are sure of your correct BMP085 wiring, then try changing that '/dev/i2c-1' in '/dev/i2c-0' . **BananaPi users MUST change this** from 
 
@@ -168,6 +169,8 @@ or it will not work!
 After that, save the file and go back to the root of the source directory:
 
 --
+
+```bash
 cd /home/pi/raspberry_rtl_wh1080
 
 mkdir build
@@ -180,7 +183,7 @@ make
 
 sudo make install
 
-
+```
 --
 Do not pay too much attention to the various 'Warning' that you'll see, they are not importants.
 
@@ -193,16 +196,22 @@ Remember: the sensor group sends its data every 48 seconds, so don't pretend to 
 To test now we need to know on what frequencies your WH1080 is transmitting. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz. You should find yours on a label on the back of the indoor console. 
 My station sends its data on 868.3 Mhz, so my command line should be:
 
-**rtl_433 -f 868300000 -l 0**
+```bash
+rtl_433 -f 868300000 -l 0
+```
 
 
 Note that sometime you could have reception problems if you tune to the exact frequency of your station (that's the way rtl-sdr works), and you'll better move off a little from the frequency center. So for my station which is 868.3 Mhz, I'll better tune (for example) to 868.25 Mhz:
 
-**rtl_433 -f 868250000 -l 0**
+```bash
+rtl_433 -f 868250000 -l 0
+```
 
 or to 868.35 Mhz:
 
-**rtl_433 -f 868350000 -l 0**
+```bash
+rtl_433 -f 868350000 -l 0
+```
 
 Keep this in mind especially in case of WH1080's drifting frequencies: you should find the right value for your station by seeking a little, and it should be fine on all seasons :). A good start point could be to use your USB dongle with some rtl-sdr program (SDRSharp, CubicSDR...) to find your WH1080 frequency as 'seen' by your dongle, then, as said, move off just a little in raspberry_rtl_wh1080.
 
@@ -210,7 +219,9 @@ Keep this in mind especially in case of WH1080's drifting frequencies: you shoul
  
 If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defaults to that frequency, but keep the '-l 0' parameter:
 
-**rtl_433 -l 0**
+```bash
+rtl_433 -l 0
+```
 
 
 '**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection. Sometime it seems not to work at the best that way, so in that case you could try values like '-l 4000' or '-l 8000' or try to find yourself a good value (between 0-32767).
@@ -219,7 +230,9 @@ If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defa
 
 If you need json formatted data output, use -F json parameter:
 
-**rtl_433 -f 868300000 -F json -l 0**
+```bash
+rtl_433 -f 868300000 -F json -l 0
+```
 
 
 
