@@ -17,7 +17,7 @@ Based on [rtl_433] (https://github.com/merbanan/rtl_433), a fantastic tool to tu
 - The [Fine Offset WH1080] (http://www.foshk.com/weather_professional/wh1080.htm) is a relatively low-cost weather station and is also sold rebranded with many names: Watson W-8681, Digitech XC0348 Weather Station, PCE-FWS 20, Elecsa AstroTouch 6975, Froggit WH1080 and many others.
  
 --
-The WH1080 weather station is composed by an indoor touchscreen control panel and an outdoor wireless sensors group. The latter sends periodically radio data packets to the indoor console, containing weather measurements about wind speed, wind direction, temperature, humidity and rainfall. It periodically sends also time signals ([DCF77] (https://en.wikipedia.org/wiki/DCF77) and maybe other time signals standards) to keep the console clock perfectly synced with an atomic clock.
+The WH1080 weather station is composed by an indoor touchscreen control panel and an outdoor wireless sensors group. The latter sends periodically radio data packets to the indoor console, containing weather measurements about wind speed, wind direction, temperature, humidity and rainfall. It periodically sends also time signals ([DCF77] (https://en.wikipedia.org/wiki/DCF77) and maybe other time signals standards) to keep the console clock perfectly synced with an atomic clock. 
 The indoor console itself contains a barometric sensor and another hygro and temperature sensor. All of these data are available thru the console's USB port: by connecting a PC and by using some opportune software it's possible to keep track of the weather conditions on your area.
 
 
