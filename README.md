@@ -205,11 +205,11 @@ If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defa
 *rtl_433 -l 0*
 
 
-'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection.
+'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection. Sometime it seems not to work at the best that way, so you'd better try values like '-l 4000' or '-l 8000' or try to find yourself a good value.
 
 
 
-If you want json formatted data output, use -F json parameter:
+If you need json formatted data output, use -F json parameter:
 
 *rtl_433 -f 868300000 -F json -l 0*
 
