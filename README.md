@@ -49,14 +49,15 @@ There is much documentation on the web about it, and the **[rtl_433] (https://gi
 By testing I've found that:
 
 - **the rtl-sdr dongle is far more sensible than the RFM01**;
-- **it's more able to cope with frequency drifting.** No more data loss, no more datalogger crashes;
-- **being a MUCH more stable solution, there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab json formatted data 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
+- **it's a MUCH more stable solution**: if you build a good datalogger script with a good error management (database errors, malformatted json output caused by temporary bad signal or interferences...) it can work flawlessly for weeks and weeks;
+- **it's more able to cope with frequency drifting.** No more datalogger down, no more data loss;
+- **there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab **json formatted data** 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
 - **the reading process takes much less CPU power than by using RFM01** (my rtl_433 process is around 15% on an 'old' Rasp model B);
 - **The receiver dongle it's almost plug & play!** No wiring, just insert the dongle in the Rasp USB port (and of course the mini antenna to the dongle :) ) 
 
 ...But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being [rtl_433] (https://github.com/merbanan/rtl_433) an hardware-agnostic project, it does not contains itself specific code for the Raspberry (or BananaPi) and its sensors.
 
-So that's my try to integrate some borrowed-from-the-web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080. 
+**So that's my try to integrate some borrowed-from-the-web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080.**
 
 Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi model B (also tested with a B+ model), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It works OK also on a BananaPi M1 and it should compile and work happily to the Raspberry Pi 2 too.
 
