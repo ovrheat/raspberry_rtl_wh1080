@@ -148,7 +148,7 @@ const unsigned char station_altitude = 10;  // <----- Edit this value entering Y
 Another thing to look for is this line, **especially you BananaPi users**:
 
 ```c
-**char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, 
+char *fileName = "/dev/i2c-1"; //<------- If your Raspberry is an older model and pressure doesn't work, 
 	// try changing '1' to '0'. Also change it to '2' if you are using a BananaPi! ("/dev/i2c-2";)**
 ```
 
