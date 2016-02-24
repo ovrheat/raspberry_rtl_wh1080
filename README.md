@@ -53,7 +53,7 @@ By testing I've found that:
 - **it's more able to cope with frequency drifting.** No more datalogger down, no more data loss;
 - **there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab **json formatted data** 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
 - **the reading process takes much less CPU power than by using RFM01** (my rtl_433 process is around 15% on an 'old' Rasp model B);
-- **The receiver dongle it's almost plug & play!** No wiring, just insert the dongle in the Rasp USB port (and of course the mini antenna to the dongle :) ) 
+- **The receiver dongle it's almost plug & play!** No wiring, just insert the dongle in the Rasp USB port (and of course the mini antenna to the dongle :smile: ) 
 
 ...But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being [rtl_433] (https://github.com/merbanan/rtl_433) an hardware-agnostic project, it does not contains itself specific code for the Raspberry (or BananaPi) and its sensors.
 
@@ -286,7 +286,7 @@ Notice the slightly different pressure, but all the rest is the same.
 **This is the way the station works.** You could enable some mechanism on your script to ignore the second data packet if having the same datetime string (and eventually the same station id), should this be an unwanted behaviour.
 
 --
-For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just **don't** bother them with questions related to Raspberries/Bananas and pressure sensors... :)
+For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just **don't** bother them with questions related to Raspberries/Bananas and pressure sensors...  :smile:
 
 
 ------------------------------------------------------------------
