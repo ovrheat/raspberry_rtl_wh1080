@@ -24,9 +24,9 @@ The indoor console itself contains a barometric sensor and another hygro and tem
 
 
 
-Unfortunately the USB connection is not much reliable in the longtime and it tends to stall every often, giving the need for a console's reset. Furthermore, having a pc connected to the console with a (short) USB cable makes impossible to keep the console handy, so you have to choose if you want to see around the console or if you want to record its data.
+Unfortunately the USB connection is not much reliable in the longtime and it tends to stall every often, giving the need for a console's reset. Furthermore, having a pc connected to the console with a (short) USB cable makes impossible to keep the console handy, so you have to choose if you want to see your console around or if you want to record its data.
 
-A solution would be to grab the radio signals sent by the outdoor sensors with some kind of receiver, opportunely decoding and saving them. But there is a disadvantage: because the barometric sensor is enclosed into the indoor console unit and not in the outdoor sensors group, pressure data is NOT available into these radio signals. So we should connect a barometric sensor to this receiver to integrate the missing pressure data.
+A solution is to grab the radio signals sent by the outdoor sensors with some kind of receiver, opportunely decoding and saving them. But there is a disadvantage: because the barometric sensor is enclosed into the indoor console unit and not in the outdoor sensors group, pressure data is NOT available into these radio signals. So we should connect a barometric sensor to this receiver to integrate the missing pressure data.
 
 The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has GPIO ports to connect sensors, its low power is more than enough for this task and it will not weigh down your electric bill even with 24/7 service (it's much less than 5 watts). The pressure sensor (barometer) it's a cheap BMP085 or BMP180 and its wiring requires only four wires.
 
