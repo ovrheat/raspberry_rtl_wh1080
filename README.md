@@ -3,7 +3,7 @@
 # raspberry_rtl_wh1080
 ---
 ---
-[RaspberryPi] (https://www.raspberrypi.org/) / [BananaPi] (https://en.wikipedia.org/wiki/Banana_Pi) all-in-one rtl-sdr solution to decode [Fine Offset WH1080 weather station] (http://www.foshk.com/weather_professional/wh1080.htm) RF data signal, and to read pressure data from a [BMP085] (https://www.google.com/search?q=BMP085)/[BMP180] (https://www.google.com/search?q=BMP180) barometric sensor.
+[RaspberryPi] (https://www.raspberrypi.org/) / [BananaPi] (https://en.wikipedia.org/wiki/Banana_Pi) all-in-one rtl-sdr solution to decode [Fine Offset WH1080 weather station] (http://www.foshk.com/weather_professional/wh1080.htm) Weather and Datetime RF data signal, and to read pressure data from a [BMP085] (https://www.google.com/search?q=BMP085)/[BMP180] (https://www.google.com/search?q=BMP180) barometric sensor.
 ------------------------------
 ------------------------------
 
