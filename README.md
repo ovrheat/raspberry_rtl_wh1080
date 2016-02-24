@@ -236,7 +236,7 @@ To recognize message type (weather or time) and adapt your data acquisition scri
 
  
  
-Just another thing to know: the station often sends double-data packets in the same second (or so): 
+Just another thing to know: the station often sends a double-data packet in the same second (or so): 
 
 ```
 
@@ -267,7 +267,9 @@ Just another thing to know: the station often sends double-data packets in the s
         
 ```
 
-This is the way the station works. You could enable some mechanism on your script to ignore the second data packet if it's identical to the first, should this be an unwanted behaviour.
+Notice the slightly different pressure, but all the rest is the same. 
+
+**This is the way the station works.** You could enable some mechanism on your script to ignore the second data packet if having the same datetime string (and eventually the same station id), should this be an unwanted behaviour.
 
 --
 For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just **don't** bother them with questions related to Raspberries/Bananas and pressure sensors... :)
