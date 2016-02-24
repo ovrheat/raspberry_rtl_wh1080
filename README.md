@@ -94,6 +94,7 @@ especially for the BananaPi, but obviously it should be writable by your user (a
 
 --
 
+```bash
 sudo apt-get update
 
 sudo apt-get install build-essential libusb-1.0-0-dev i2c-tools libi2c-dev cmake git
@@ -115,7 +116,7 @@ make
 sudo make install
 
 sudo reboot
-
+```
 
 --
 Now that we have the rtl-sdr base installed we can proceed with **raspberry_rtl_wh1080**:
