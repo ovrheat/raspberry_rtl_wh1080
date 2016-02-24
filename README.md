@@ -32,7 +32,7 @@ The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has
 
 To receive WH1080's data with a RaspberryPi I have first tested by using an [RFM01] (https://www.google.com/search?q=RFM01) module: it's a tiny radio data receiver that works fine in normal conditions. Some line of code found on the web, some more wiring, and the ensemble 'Rasp + RFM01 + BMP085' has worked for a season... Or so. 
 
-Unfortunately, with season changes I've found that WH1080 tends to drift in frequency, probably because of the lack of frequency/temperature compensation on the external sensors' TX: the more the temperature was lowering in winter, the more the signal was drifting and my 'ensemble' was unable to cope with it. So during the most interesting part of winter I was unable to track down data!
+Unfortunately, with season changes I've found that my WH1080 tends to drift in frequency, probably because of the lack of frequency/temperature compensation on the external sensors' TX: the more the temperature was lowering in winter, the more the signal was drifting and my 'ensemble' was unable to cope with it. So during the most interesting part of winter I was unable to track down data!
 
 Trying to recalibrate frequency on RFM01 was an option, but as soon as summer approaching, the same problem obviously rised again with the same result: no data, need to recalibrate back again...
 
