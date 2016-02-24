@@ -28,7 +28,7 @@ Unfortunately the USB connection is not much reliable in the longtime and it ten
 
 A solution is to grab the radio signals sent by the outdoor sensors with some kind of receiver, opportunely decoding and saving them. But there is a disadvantage: because the barometric sensor is enclosed into the indoor console unit and not in the outdoor sensors group, pressure data is NOT available into these radio signals. So we should connect a barometric sensor to this receiver to integrate the missing pressure data.
 
-The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has GPIO ports to connect sensors, its low power is more than enough for this task and it will not weigh down your electric bill even with 24/7 service (it's much less than 5 watts). The pressure sensor (barometer) it's a cheap BMP085 or BMP180 and its wiring requires only four wires.
+The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has GPIO ports to connect sensors, its low power is more than enough for this task and it will not weigh down your electric bill even with 24/7 service (it's less than 5 watts). The pressure sensor (barometer) it's a cheap BMP085 or BMP180 and its wiring requires only four wires.
 
 To receive WH1080's data with a RaspberryPi I have first tested using an [RFM01] (https://www.google.com/search?q=RFM01) module: it's a tiny radio data receiver that works fine in normal conditions. Some line of code found on the web, some more wiring, and the ensemble 'Rasp + RFM01 + BMP085' has worked for a season... Or so. 
 
