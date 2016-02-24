@@ -49,7 +49,7 @@ There is much documentation on the web about it, and the **[rtl_433] (https://gi
 By testing I've found that:
 
 - **the rtl-sdr dongle is far more sensible than the RFM01** (even using its mini-antenna);
-- **it's a MUCH more stable solution**: if you build a good datalogger script with a good error management (database errors, malformatted json output caused by temporary bad signal or interferences...) it can work flawlessly for weeks and weeks;
+- **it's a MUCH more stable solution**: if you build a good datalogger script with a good error management (database errors, malformed json output caused by temporary bad signal or interferences...) it can work flawlessly for weeks and weeks;
 - **it's more able to cope with frequency drifting.** No more datalogger down, no more data loss;
 - **there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab **json formatted data** 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
 - **the reading process takes much less CPU power than by using RFM01** (my rtl_433 process is around 15% on an 'old' Rasp model B);
