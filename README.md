@@ -224,7 +224,7 @@ If you need json formatted data output, use -F json parameter:
 
 
 --
-The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some 3-4 minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it returns again to send weather data as usual.
+The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some 3-4 minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so (with the usual 48-seconds cycle between data). Then it returns again to send weather data as usual.
 
 
 To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json output:
@@ -232,6 +232,42 @@ To recognize message type (weather or time) and adapt your data acquisition scri
 **msg_type 0 = weather data**
 
 **msg_type 1 = time data**
+
+
+ 
+ 
+Just another thing to know: the station often sends double-data packets in the same second (or so): 
+
+
+
+**2016-02-24 00:26:02** :   Fine Offset WH1080 weather station
+        Msg type:        0
+        StationID:       0005
+        Temperature:     7.3 C
+        Humidity:        93 %
+        Pressure:        1009.47 hPa
+        Wind string:     N
+        Wind degrees:    0
+        Wind avg speed:  0.00
+        Wind gust:       0.00
+        Total rainfall:  255.0
+        Internal temp.:  18.1 C
+**2016-02-24 00:26:02** :   Fine Offset WH1080 weather station
+        Msg type:        0
+        StationID:       0005
+        Temperature:     7.3 C
+        Humidity:        93 %
+        Pressure:        1009.50 hPa
+        Wind string:     N
+        Wind degrees:    0
+        Wind avg speed:  0.00
+        Wind gust:       0.00
+        Total rainfall:  255.0
+        Internal temp.:  18.1 C 
+        
+
+
+This is the way the station works. You could enable some mechanism on your script to ignore the second data packet if it's identical to the first, should this be an unwanted behaviour.
 
 --
 For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just **don't** bother them with questions related to Raspberries/Bananas and pressure sensors... :)
