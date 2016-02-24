@@ -37,7 +37,8 @@ Unfortunately, with season changes I've found that WH1080 tends to drift in freq
 Trying to recalibrate frequency on RFM01 was an option, but as soon as summer approaching, the same problem obviously rised again with the same result: no data, need to recalibrate back again...
 
 Furthermore the C code solution used to read data from the RFM01 module was built to write the received data into a temporary file. The file was then read by my Python datalogger script to get the data contained within. Then again the file was  overwritten by the C program with new incoming data, and so on and on (and on....).
-This process was happening every 48 seconds (the WH1080 sends its data every 48 seconds), so this means that in a year that file was overwritten more than 500,000 times! It's way too much for the poor SDcard which is the 'hard disk' of the Rasp (as you know there is a finite number of write-cycles in such a media). 
+This process was happening every 48 seconds (the WH1080 sends its data every 48 seconds), so this means that in a year that file was overwritten more than 500,000 times!  
+It's way too much for the poor SDcard which is the 'hard disk' of the Rasp (as you know there is a finite number of write-cycles in such a media). 
 
 So after some try I've hacked the C code, so the program was now passing its values 'on-the-fly' to the Python datalogger script instead of writing data to a file. But this approach, summed up to the frequency drift problems, somehow introduced new instability behaviours...
 
