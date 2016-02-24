@@ -47,11 +47,11 @@ There is much documentation on the web about it, and the **[rtl_433] (https://gi
 
 By testing I've found that:
 
-- the rtl-sdr dongle is far more sensible than the RFM01;
-- it's more able to cope with frequency drifting. No more data loss, no more datalogger crashes;
-- being a MUCH more stable solution, there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method. You can grab json formatted data 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
-- the reading process takes much less CPU power than using RFM01 (my rtl_433 process is around 15% on an 'old' Rasp model B);
-- The receiver dongle it's almost plug & play! No wiring, just insert the dongle in the Rasp USB port!
+- **the rtl-sdr dongle is far more sensible than the RFM01**;
+- **it's more able to cope with frequency drifting.** No more data loss, no more datalogger crashes;
+- **being a MUCH more stable solution, there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab json formatted data 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
+- **the reading process takes much less CPU power than by using RFM01** (my rtl_433 process is around 15% on an 'old' Rasp model B);
+- **The receiver dongle it's almost plug & play!** No wiring, just insert the dongle in the Rasp USB port!
 
 ...But we still have the same problem about lack of pressure data so we still need a BMP085 or compatible sensor, with relative data reading code, and being [rtl_433] (https://github.com/merbanan/rtl_433) an hardware-agnostic project, it does not contains itself specific code for the Raspberry (or BananaPi) and its sensors.
 
