@@ -185,7 +185,7 @@ Do not pay too much attention to the various 'Warning' that you'll see, they are
 
 You are now done and ready to test. Remember to connect the mini antenna to the dongle (..doh!). 
 
-Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some dozen of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
+Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some tens of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
 
 
 To test now we need to know on what frequencies your WH1080 is transmitting. You should find this on a label on the back of the indoor console. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz.
@@ -221,7 +221,7 @@ If you need json formatted data output, use -F json parameter:
 
 
 --
-The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some 2-4 minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it returns again to send weather data as usual.
+The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some 3-4 minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it returns again to send weather data as usual.
 
 
 To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json output:
