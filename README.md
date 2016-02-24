@@ -30,7 +30,7 @@ A solution is to grab the radio signals sent by the outdoor sensors with some ki
 
 The RaspberryPi mini computer fits perfectly to this purpose: it's cheap, it has GPIO ports to connect sensors, its low power is more than enough for this task and it will not weigh down your electric bill even with 24/7 service (it's less than 5 watts). The pressure sensor (barometer) it's a cheap BMP085 or BMP180 and its wiring requires only four wires.
 
-To receive WH1080's data with a RaspberryPi I have first tested using an [RFM01] (https://www.google.com/search?q=RFM01) module: it's a tiny radio data receiver that works fine in normal conditions. Some line of code found on the web, some more wiring, and the ensemble 'Rasp + RFM01 + BMP085' has worked for a season... Or so. 
+To receive WH1080's data with a RaspberryPi I have first tested by using an [RFM01] (https://www.google.com/search?q=RFM01) module: it's a tiny radio data receiver that works fine in normal conditions. Some line of code found on the web, some more wiring, and the ensemble 'Rasp + RFM01 + BMP085' has worked for a season... Or so. 
 
 Unfortunately, with season changes I've found that WH1080 tends to drift in frequency, probably because of the lack of frequency/temperature compensation on the external sensors' TX: the more the temperature was lowering in winter, the more the signal was drifting and my 'ensemble' was unable to cope with it. So during the most interesting part of winter I was unable to track down data!
 
