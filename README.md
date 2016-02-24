@@ -208,7 +208,7 @@ If your station transmits on 433 Mhz you can omit the '-f' part, as rtl_433 defa
 *rtl_433 -l 0*
 
 
-'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection. Sometime it seems not to work at the best that way, so you'd better try values like '-l 4000' or '-l 8000' or try to find yourself a good value.
+'**-l 0**' is the bit detection level parameter. Leaving it to '0' makes rtl_433 able to automatically adapt such detection. Sometime it seems not to work at the best that way, so in that case you could try values like '-l 4000' or '-l 8000' or try to find yourself a good value (between 0-32767).
 
 
 
@@ -220,7 +220,7 @@ If you need json formatted data output, use -F json parameter:
 
 
 --
-The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it starts again to send weather data as usual.
+The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some 2-4 minute of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so. Then it returns again to send weather data as usual.
 
 
 To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json output:
@@ -230,13 +230,13 @@ To recognize message type (weather or time) and adapt your data acquisition scri
 *msg_type 1 = time data*
 
 --
-For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just don't bother them with questions related to Raspberry and pressure sensors... :)
+For specific usage of rtl_433 (and other relative options) you can look at the [project page] (https://github.com/merbanan/rtl_433). Just don't bother them with questions related to Raspberries/Bananas and pressure sensors... :)
 
 
 ------------------------------------------------------------------
 
 Notes:
-- this is essentially a 'hacked' version of [rtl_433] (https://github.com/merbanan/rtl_433); credits and kudos should go to this fantastic tool's authors.
+- this is essentially a 'hacked' version of [rtl_433] (https://github.com/merbanan/rtl_433); kudos should go to this fantastic tool's authors.
 - BMP085 code comes from https://www.john.geek.nz/2013/02/update-bosch-bmp085-source-raspberry-pi/ . Kudos!
 
 
