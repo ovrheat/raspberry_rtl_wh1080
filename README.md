@@ -240,7 +240,7 @@ Just another thing to know: the station often sends double-data packets in the s
 
 ```
 
-**2016-02-24 00:26:02** :   Fine Offset WH1080 weather station
+2016-02-24 00:26:02 :   Fine Offset WH1080 weather station
         Msg type:        0
         StationID:       0005
         Temperature:     7.3 C
@@ -252,7 +252,7 @@ Just another thing to know: the station often sends double-data packets in the s
         Wind gust:       0.00
         Total rainfall:  255.0
         Internal temp.:  18.1 C
-**2016-02-24 00:26:02** :   Fine Offset WH1080 weather station
+2016-02-24 00:26:02 :   Fine Offset WH1080 weather station
         Msg type:        0
         StationID:       0005
         Temperature:     7.3 C
