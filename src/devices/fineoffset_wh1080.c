@@ -546,14 +546,14 @@ if (msg_type == 0) {
 		
 	data = data_make("time",          "",               DATA_STRING,	time_str,
                      "model",         		"",               	DATA_STRING,	"Fine Offset WH1080 weather station",
-		     "msg_type",	  	"Msg type",		DATA_INT,		msg_type,	
-                     "id",            		"StationID",      	DATA_FORMAT,	"%04X",	DATA_INT,	device_id,
-                     "hours",			"Hours",		DATA_FORMAT,	"%02d",	DATA_INT,	the_hours,
-                     "minutes",			"Minutes",       	DATA_FORMAT,	"%02d",	DATA_INT,	the_minutes,
-                     "seconds",			"Seconds", 		DATA_FORMAT,	"%02d",	DATA_INT,	the_seconds,
-		     "year",			"Year", 		DATA_FORMAT,	"%02d",	DATA_INT,	the_year,
-                     "month",			"Month",     		DATA_FORMAT,	"%02d",	DATA_INT,	the_month,
-                     "day",			"Day",      		DATA_FORMAT,	"%02d",	DATA_INT,	the_day,
+		     "msg_type",	  	"Msg type",		DATA_FORMAT,	"\b%d",		DATA_INT,	msg_type,	
+                     "id",            		"StationID",      	DATA_FORMAT,	"\b%04X",	DATA_INT,	device_id,
+                     "hours",			"Hours",		DATA_FORMAT,	"\t%02d",	DATA_INT,	the_hours,
+                     "minutes",			"Minutes",       	DATA_FORMAT,	"\b%02d",	DATA_INT,	the_minutes,
+                     "seconds",			"Seconds", 		DATA_FORMAT,	"\b%02d",	DATA_INT,	the_seconds,
+		     "year",			"Year", 		DATA_FORMAT,	"\t%02d",	DATA_INT,	the_year,
+                     "month",			"Month",     		DATA_FORMAT,	"\t%02d",	DATA_INT,	the_month,
+                     "day",			"Day",      		DATA_FORMAT,	"\t%02d",	DATA_INT,	the_day,
                      NULL);
     data_acquired_handler(data);
     return 1; 
