@@ -548,12 +548,12 @@ if (msg_type == 0) {
                      "model",         		"",               	DATA_STRING,	"Fine Offset WH1080 weather station",
 		     "msg_type",	  	"Msg type",		DATA_INT,		msg_type,	
                      "id",            		"StationID",      	DATA_FORMAT,	"%04X",	DATA_INT,	device_id,
-                     "the_hours",		"Hours",		DATA_FORMAT,	"%02d",	DATA_INT,	the_hours,
-                     "the_minutes",		"Minutes",       	DATA_FORMAT,	"%02d",	DATA_INT,	the_minutes,
-                     "the_seconds",		"Seconds", 		DATA_FORMAT,	"%02d",	DATA_INT,	the_seconds,
-		     "the_year",		"Year", 		DATA_FORMAT,	"%02d",	DATA_INT,	the_year,
-                     "the_month",		"Month",     		DATA_FORMAT,	"%02d",	DATA_INT,	the_month,
-                     "the_day",			"Day",      		DATA_FORMAT,	"%02d",	DATA_INT,	the_day,
+                     "hours",			"Hours",		DATA_FORMAT,	"%02d",	DATA_INT,	the_hours,
+                     "minutes",			"Minutes",       	DATA_FORMAT,	"%02d",	DATA_INT,	the_minutes,
+                     "seconds",			"Seconds", 		DATA_FORMAT,	"%02d",	DATA_INT,	the_seconds,
+		     "year",			"Year", 		DATA_FORMAT,	"%02d",	DATA_INT,	the_year,
+                     "month",			"Month",     		DATA_FORMAT,	"%02d",	DATA_INT,	the_month,
+                     "day",			"Day",      		DATA_FORMAT,	"%02d",	DATA_INT,	the_day,
                      NULL);
     data_acquired_handler(data);
     return 1; 
@@ -573,13 +573,13 @@ static char *output_fields[] = {
 	"gust",
 	"rain",
 	"msg_type",
-	"the_hours",
-	"the_minutes",
-	"the_seconds",
-	"the_year",
-	"the_month",
-	"the_day",
-	"int_temp",
+	"hours",
+	"minutes",
+	"seconds",
+	"year",
+	"month",
+	"day",
+	"temp",
 	//"battery", // Still unsure about Battery byte...
 	NULL
 };
