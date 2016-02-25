@@ -398,7 +398,11 @@ static void print_json_double(data_printer_context_t *printer_ctx, double data, 
 
 static void print_json_int(data_printer_context_t *printer_ctx, int data, char *format, FILE *file)
 {
+	//if (snprintf(NULL, 0, "%d", data) < 2) {
+	//fprintf(file, "0%d", data);
+	//} else {
 	fprintf(file, "%d", data);
+	//}	
 }
 
 /* Key-Value printer */
