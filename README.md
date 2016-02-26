@@ -49,9 +49,9 @@ There is much documentation on the web about it, and the **[rtl_433] (https://gi
 By testing I've found that:
 
 - **the rtl-sdr dongle is far more sensible than the RFM01** (even using its mini-antenna);
-- **it's a MUCH more stable solution**: if you build a good datalogger script with a good error management (database errors, malformed json output caused by temporary bad signal or interferences...) it can work flawlessly for weeks and weeks;
+- **it's a MUCH more stable solution**: if you build a good datalogger script with a good error management (database errors, malformed json/csv output caused by temporary bad signal or interferences...) it can work flawlessly for weeks and weeks;
 - **it's more able to cope with frequency drifting.** No more datalogger down, no more data loss;
-- **there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab **json formatted data** 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
+- **there's no need anymore to pass data to a datalogger script by using such a 'data file transfer' method.** You can grab **json/csv formatted data** 'on the fly' from the program by piping its output into your (Python?) datalogger script. As a result, the Rasp SDcard is much less stressed and its theoretical life is -of course- much longer.  
 - **the reading process takes much less CPU power than by using RFM01** (my rtl_433 process is around 15% on an 'old' Rasp model B);
 - **The receiver dongle it's almost plug & play!** No wiring, just insert the dongle in the Rasp USB port (and of course the mini antenna to the dongle :smile: ) 
 
@@ -69,7 +69,7 @@ So this software can:
 
 - **Get your WH1080 outdoor weather data:** wind direction and speed, temperature, humidity, rain, and pressure (from the wired BMP085/BMP180 sensor);
 - **Get the exact time and date (DCF77 time system and maybe more) coming from the station**: the WH1080 sends datetime data packets at the start of the even hours. Datetime is broadcasted by a hi-power transmitter located in Germany (DCF77 system) grabbing its time from an atomic clock. By using some scripting you could easily keep the Rasp internal clock to the **exact** time and date without the need of [NTP] (https://en.wikipedia.org/wiki/Network_Time_Protocol) or [RTC] (https://www.google.com/search?q=raspberry+rtc). No data connection required!
-- **Give you a valid json data output for your Python's (or other programming languages) needs;**
+- **Give you a valid json/csv data output for your Python's (or other programming languages) needs;**
 - **Give you the flexibility of rtl_433 thanks to its options:** you can optimize data mode, signal, frequency etc. ...
 
 
@@ -235,13 +235,20 @@ rtl_433 -f 868300000 -F json -l 0
 ```
 
 
+If you need csv formatted data output, use -F csv parameter:
+
+```bash
+rtl_433 -f 868300000 -F csv -l 0
+```
+
+
 
 
 --
 The WH1080 sends time packets on the start of (most) every even hour: at the minute 59 of the odd hour the station stops sending weather data. After some 3-4 minutes of silence, probably used to sync purpose, the station starts to send time data for around three minutes or so (with the usual 48-seconds cycle between data). Then it returns again to send weather data as usual.
 
 
-To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json output:
+To recognize message type (weather or time) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json/csv output:
 
 **msg_type 0 = weather data**
 
