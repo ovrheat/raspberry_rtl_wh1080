@@ -190,6 +190,14 @@ Do not pay too much attention to the various 'Warning' that you'll see, they are
 
 You are now done and ready to test. Remember to connect the mini antenna to the dongle (..doh!). 
 
+---
+For the help and to see all of the program's options:
+ ```bash
+rtl_433 -h
+ ```
+--- 
+
+
 Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some tens of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
 
 
@@ -254,13 +262,7 @@ To recognize message type (weather or time) and adapt your data acquisition scri
 
 **msg_type 1 = time data**
 
- --
 
-For the help and to see all of the program's options:
- ```bash
-rtl_433 -h
- ```
---
   
  
 Just another thing to know: the station often sends a double-data packet in the same second (or so): 
