@@ -191,8 +191,8 @@ Do not pay too much attention to the various 'Warning' that you'll see, they are
 You are now done and ready to test. Remember to connect the mini antenna to the dongle (..doh!). 
 
 ---
-*Usage:*
- 
+Usage:
+---------------- 
 For the help and to see all of the program's options:
  ```bash
 rtl_433 -h
