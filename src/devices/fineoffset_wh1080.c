@@ -579,7 +579,6 @@ static char *output_fields[] = {
 	"year",
 	"month",
 	"day",
-	"temp",
 	//"battery", // Still unsure about Battery byte...
 	NULL
 };
