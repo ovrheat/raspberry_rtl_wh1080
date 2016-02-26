@@ -254,8 +254,14 @@ To recognize message type (weather or time) and adapt your data acquisition scri
 
 **msg_type 1 = time data**
 
+ --
 
- 
+For the help and to see all of the program's options:
+ ```bash
+rtl_433 -h
+ ```
+--
+  
  
 Just another thing to know: the station often sends a double-data packet in the same second (or so): 
 
