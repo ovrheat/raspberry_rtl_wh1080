@@ -191,17 +191,16 @@ Do not pay too much attention to the various 'Warning' that you'll see, they are
 You are now done and ready to test. Remember to connect the mini antenna to the dongle (..doh!). 
 
 ---
+
 For the help and to see all of the program's options:
  ```bash
 rtl_433 -h
  ```
---- 
+
+Let's now go to see some example of practical use. Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some tens of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
 
 
-Remember: the sensor group sends its data every 48 seconds, so don't pretend to see data immediately, probably it will take some tens of seconds. Keep this in mind especially at the start of the even hours, because of the 3-4 minutes of silence before the time signal, as explained later.
-
-
-To test now we need to know on what frequency is your WH1080 transmitting. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz. You should find yours on a label on the back of the indoor console. 
+At first we need to know on what frequency is your WH1080 transmitting. This station comes in (at least) three different TX frequencies models: 868 Mhz, 433 Mhz and 915 Mhz. You should find yours on a label on the back of the indoor console. 
 My station sends its data on 868.3 Mhz, so my command line should be:
 
 ```bash
