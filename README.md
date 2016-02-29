@@ -115,6 +115,8 @@ make
 
 sudo make install
 
+sudo ldconfig
+
 sudo reboot
 ```
 
