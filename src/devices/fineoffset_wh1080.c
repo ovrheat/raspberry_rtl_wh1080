@@ -109,7 +109,7 @@
 #define BMP085_I2C_ADDRESS 0x77
 
 
-const unsigned char station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!
+const double station_altitude = 10;  // <----- Edit this value entering YOUR station altitude!
 
 const unsigned char BMP085_OVERSAMPLING_SETTING = 3;
 
@@ -320,8 +320,8 @@ double read_press()
 	bmp085_Calibration();
 	temperature = bmp085_GetTemperature(bmp085_ReadUT());
 	pressure = bmp085_GetPressure(bmp085_ReadUP());
-
-	return ((((double)pressure)/100)/ pow(1.0 - station_altitude/44330.0, 5.255));
+	return ((((double)pressure)/100) / pow((1.0 - (station_altitude/100)/44330.0), 5.255));
+	//return ((((double)pressure)/100)/ pow(1.0 - station_altitude/44330.0, 5.255));
 	
 	//Relative pressure calculated from 'station_altitude' value. See https://en.wikipedia.org/wiki/Barometric_formula 
 	//See also: https://www.mkompf.com/weather/pibaro.html
