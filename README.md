@@ -308,7 +308,7 @@ For specific usage of rtl_433 (and other relative options) you can look at the [
 ------------------------------------------------------------------
 
 Notes:
-- this is essentially a 'hacked' version of [rtl_433] (https://github.com/merbanan/rtl_433); kudos should go to this fantastic tool's authors.
+- this is essentially a 'hacked' version of [rtl_433] (https://github.com/merbanan/rtl_433); kudos should go to this fantastic tool authors.
 - BMP085 code comes from https://www.john.geek.nz/2013/02/update-bosch-bmp085-source-raspberry-pi/ . Kudos!
 
 
