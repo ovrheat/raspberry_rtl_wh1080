@@ -4,7 +4,8 @@
 #include "bitbuffer.h"
 
 #define DEVICES \
-		DECL(fineoffset_wh1080)
+		DECL(fineoffset_wh1080) \
+		DECL(fineoffset_XC0400)
 
 typedef struct {
 	char name[256];
@@ -12,9 +13,12 @@ typedef struct {
 	float short_limit;
 	float long_limit;
 	float reset_limit;
+	float gap_limit;
+    float sync_width;
+    float tolerance;
 	int (*json_callback)(bitbuffer_t *bitbuffer);
 	unsigned int disabled;
-	unsigned long demod_arg;	// Decoder specific optional argument (may be pointer to struct)
+	unsigned demod_arg;	// Decoder specific optional argument
 	char **fields;			// List of fields this decoder produces; required for CSV output. NULL-terminated.
 } r_device;
 

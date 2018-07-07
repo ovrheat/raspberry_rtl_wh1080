@@ -23,6 +23,41 @@
 
 #include <stdio.h>
 
+#if defined(_MSC_VER) && !defined(__clang__)
+  /*
+   * MSVC have no support for "Variable Length Arrays"
+   * But compiling using 'clang-cl', '_MSC_VER' is a built-in. Hence use VLA
+   * for Clang in that case.
+   * With no VLAs, we need 'alloca()' which is in '<malloc.h>' etc.
+   */
+  #include <malloc.h>
+  #define RTL_433_NO_VLAs
+
+  /* gcc uses the syntax:
+   *   foo (char *restict ptr);
+   *
+   * But MSVC needs the syntax:
+   *   foo (char *ptr __declspec(restrict));
+   *
+   * Hence just make 'restrict' a NOOP.
+   */
+  #ifndef restrict
+  #define restrict
+  #endif
+#endif
+
+/*
+ * The only place '<strings.h>' is currenly needed is in 'src/devices/flex.c'.
+ * But it's cleaner to keep such trivia here.
+ */
+#ifdef _MSC_VER
+  #include <string.h>
+  #define strcasecmp(s1,s2)     _stricmp(s1,s2)
+  #define strncasecmp(s1,s2,n)  _strnicmp(s1,s2,n)
+#else
+  #include <strings.h>
+#endif
+
 typedef enum {
 	DATA_DATA,		/* pointer to data is stored */
 	DATA_INT,		/* pointer to integer is stored */
@@ -47,11 +82,6 @@ typedef struct data {
 	void	    *value;
 	struct data* next; /* chaining to the next element in the linked list; NULL indicates end-of-list */
 } data_t;
-
-struct data_printer;
-extern struct data_printer data_json_printer;
-extern struct data_printer data_kv_printer;
-extern struct data_printer data_csv_printer;
 
 /** Constructs a structured data object.
 
@@ -79,7 +109,7 @@ extern struct data_printer data_csv_printer;
     @param pretty_key Pretty name for the key. Use "" if to omit pretty label for this field completely,
                       or NULL if to use key name for it.
     @param type Type of the first value to put in.
-    @param ... The value of the first value to put in, follwed by the rest of the
+    @param ... The value of the first value to put in, followed by the rest of the
                key-type-values. The list is terminated with a NULL.
 
     @return A constructed data_t* object or NULL if there was a memory allocation error.
@@ -98,14 +128,14 @@ data_array_t *data_array(int num_values, data_type_t type, void *ptr);
 /** Releases a data array */
 void data_array_free(data_array_t *array);
 
-/** Prints a structured data object as JSON to the given stream */
-void data_print(data_t *data, FILE* file, struct data_printer *printer, void *aux);
-
 /** Releases a structure object */
 void data_free(data_t *data);
 
-/** Construct auxiliary data for CSV construction
+struct data_output;
 
+/** Construct data output for CSV printer
+
+    @param file the output stream
     @param fields the list of fields to accept and expect. Array is copied, but the actual
                   strings not. The list may contain duplicates and they are eliminated.
     @param num_fields number of fields
@@ -113,9 +143,18 @@ void data_free(data_t *data);
     @return The auxiliary data to pass along with data_csv_printer to data_print.
             You must release this object with data_csv_free once you're done with it.
 */
-void *data_csv_init(const char **fields, int num_fields);
 
-/** Destructs auxiliary CSV data. */
-void data_csv_free(void *csv);
+struct data_output *data_output_csv_create(FILE *file, const char **fields, int num_fields);
+
+struct data_output *data_output_json_create(FILE *file);
+
+struct data_output *data_output_kv_create(FILE *file);
+
+struct data_output *data_output_syslog_create(const char *host, const char *port);
+
+/** Prints a structured data object */
+void data_output_print(struct data_output *output, data_t *data);
+
+void data_output_free(struct data_output *output);
 
 #endif // INCLUDE_DATA_H_
