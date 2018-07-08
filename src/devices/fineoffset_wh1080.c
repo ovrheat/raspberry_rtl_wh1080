@@ -630,7 +630,7 @@ static int fineoffset_wh1080_callback(bitbuffer_t *bitbuffer) {
 
 //  const float light = get_rawlight(br);
 //  const float lux = (get_rawlight(br)/10);
-//	const float wm = (lux/126.7);
+//  const float wm = (lux/126.7);
 //  const float fc = ((get_rawlight(br)/10.76)/10.0);
 
 /*
@@ -654,8 +654,8 @@ and solar panel efficiency."
 I live near a professional light sensor (few Km. from my home) and by using alternative formula I can see that its solar light values 
 are constantly pretty similar to my WH3080 values! Nice! ...But remember that on your LCD console you will still see the old (wrongs) values :) .
 
-If you want to change from default to alternative formula, you should comment (//)  the (currently uncommented) rows 621 to 624,
-and then uncomment (remove the // ) from the (currently commented) correspondent Alternative Formula rows (630 to 633).
+If you want to change from default to alternative formula, you should comment (//)  the (currently uncommented) rows 622 to 625,
+and then uncomment (remove the // ) from the (currently commented) correspondent Alternative Formula rows (631 to 634).
 Save and recompile!
 
 (Note: OK, I know you're not stupid. I just wanted to take care also of our not-so-skilled friends, ok? ;) )
