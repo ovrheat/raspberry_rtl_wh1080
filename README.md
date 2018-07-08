@@ -70,7 +70,7 @@ By testing I've found that:
 
 **So that's my try to integrate some borrowed-from-the-web code to read BMP085 data to an rtl_433 snapshot to build this all-in-one solution for the WH1080/3080.**
 
-Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi model B (also tested with a B+ model), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It works OK also on a BananaPi M1 (with a little editing of 1 character, see below), and it compiles and work happily on the Raspberry Pi 2 and 3 too.
+Looking at the code you'll may find that it's not such elegant, but it's a kind of test and it's working fine to me. It's tested with a RaspberryPi model B (also tested with a B+ model), Raspbian Jessie (2015-11-21), a nameless USB DVB-T RTL2832U dongle and a BMP180 sensor. It works OK also on a BananaPi M1 (with a little editing of 1 character, see below), and it compiles and works happily on the Raspberry Pi 2 and 3 too.
 
 I have stripped all of the devices modules from rtl_433 source, leaving only active the **'Fine Offset WH1080/3080 weather station'** one to keep the resources use at minimum, but if you need to re-add modules to support some other device, I think that it should be not so difficult.
 
