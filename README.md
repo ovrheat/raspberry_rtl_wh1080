@@ -262,7 +262,9 @@ The WH1080/WH3080 sends time packets on the start of (most) every even hour: at 
 To recognize message type (weather, time or UV/solar) and adapt your data acquisition scripts, you can look at the 'msg_type' field on json/csv output:
 
 **msg_type 0 = weather data**
+
 **msg_type 1 = time data**
+
 **msg_type 2 =UV/solar data (WH3080 only)**
 
 
